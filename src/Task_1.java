@@ -14,8 +14,8 @@ public class Task_1 {
         mode = 1;
     }
     public void modeAsk(){
-
-        System.out.println("Select mode (in int !!!)( 1:double-double   2:int-double   3:double-int )");
+        System.out.print("Welcome to task 1: ");
+        System.out.println("select mode (in int !!!)( 1:double-double   2:int-double   3:double-int )");
         Scanner N = new Scanner(System.in);
         mode = N.nextInt();
     }

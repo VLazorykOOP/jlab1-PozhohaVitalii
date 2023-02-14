@@ -47,6 +47,7 @@ private int inputArrey(int T){
 public String inputManager(String state) {
 
     if (!state.equals("AB")) {
+
         System.out.println("choice event (1:input A arrey   2:input B arrey)");
         Scanner choice = new Scanner(System.in);
         int elem = inputArrey(choice.nextInt());

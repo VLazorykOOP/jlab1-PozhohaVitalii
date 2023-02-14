@@ -8,6 +8,7 @@ public class Task_3 {
  Scanner inp = new Scanner(System.in);
  private int N;
  public void setMatrix(){
+  System.out.print("Welcome to task 3: ");
   System.out.println("input matrix size(n): ");
   N = inp.nextInt();
   matrix = new int[N][N];
