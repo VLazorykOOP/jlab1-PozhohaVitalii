@@ -55,6 +55,7 @@ public class Main {
                System.out.println("Ok, good work, you tested one more task, would you try again ? (1-NO 2-YES) ");
            }while (pop.nextInt()>=2);
 	// write your code here
+
         System.out.println("Lab 1 Java");
         System.out.println("complate");
     }
