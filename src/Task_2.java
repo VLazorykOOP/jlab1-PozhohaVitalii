@@ -17,6 +17,10 @@ private int inputArrey(int T){
         int i=0;
         while (i<500) {
             if (!Herro.hasNext("stop")) {
+                while (!Herro.hasNextInt()){
+                    Herro.next();
+                    System.out.println("Not a number! ");
+                }
                 Aarrey[i] = Herro.nextInt();
             }
             else break;
@@ -32,6 +36,10 @@ private int inputArrey(int T){
         int i=0;
         while (i<200) {
             if (!Herro.hasNext("stop")) {
+                while (!Herro.hasNextInt()){
+                    Herro.next();
+                    System.out.println("Not a number! ");
+                }
                 Barrey[i] = Herro.nextInt();
             }else break;
             i++;
@@ -44,13 +52,88 @@ private int inputArrey(int T){
     }
  return arreyId;
 }
+
+
+    private int inputArrey(int T,int size){
+        int arreyId=0;
+        System.out.println("Welcome to arrey initialization (write 'stop' to stop input)");
+        if (T==1){
+            Scanner Herro = new Scanner(System.in);
+            int i=0;
+            while (i<size) {
+
+                    while (!Herro.hasNextInt()){
+                        Herro.next();
+                        System.out.println("Not a number! ");
+                    }
+                    Aarrey[i] = Herro.nextInt();
+
+
+                i++;
+            }
+            n=i;
+            i=0;
+            System.out.println("AAaaa is done ");
+            arreyId+=1;
+        }
+        if (T==2){
+            Scanner Herro = new Scanner(System.in);
+            int i=0;
+            while (i<size) {
+
+                    while (!Herro.hasNextInt()){
+                        Herro.next();
+                        System.out.println("Not a number! ");
+                    }
+                    Barrey[i] = Herro.nextInt();
+
+                i++;
+            }
+
+            m=i;
+            i=0;
+            System.out.println("BBbbb is done");
+            arreyId+=1000;
+        }
+        return arreyId;
+    }
+
+
 public String inputManager(String state) {
 
-    if (!state.equals("AB")) {
+    if (true) {
 
-        System.out.println("choice event (1:input A arrey   2:input B arrey)");
+        System.out.println("write int");
+
         Scanner choice = new Scanner(System.in);
-        int elem = inputArrey(choice.nextInt());
+        while (!choice.hasNextInt()){
+            choice.next();
+            System.out.println("Not a number! ");
+        }
+        int ch  = choice.nextInt();
+        ch =1;
+
+      //  int elem=0;
+        switch (ch) {
+            case (1):
+                System.out.println("A arrey size");
+                while (!choice.hasNextInt()) {
+                    choice.next();
+                    System.out.println("Not a number! ");
+                }
+                int N = choice.nextInt();
+                inputArrey(1,N);
+            case (2):
+                System.out.println("B arrey size");
+                while (!choice.hasNextInt()) {
+                    choice.next();
+                    System.out.println("Not a number! ");
+                }
+                int M = choice.nextInt();
+                inputArrey(2,M);
+        }
+
+/*
         if ((elem % 1000) != 0) {
             char[] stateChars = state.toCharArray();
             stateChars[0] = 'A';
@@ -67,35 +150,40 @@ public String inputManager(String state) {
     } else {
 
         return state;
-    }
+    }*/
+
 
 }
+    //calculations();
 
-public void calculations (){
-    Sum=0;
-    int i=0;
-    while (i<max(n,m)) {
-    if (i<n){Sum+=Aarrey[i];}
-    if(i<m){Sum+=Barrey[i];}
-    i++;
-    }
+    return state;
 }
-public void showResult(){
-    System.out.println();
-    System.out.println("AYB ");
-    System.out.println();
-    int i=0;
-    while (i<n) {
-        System.out.println(Aarrey[i]);
-        i++;
-    }
 
-    i=0;
-    while (i<m) {
-        System.out.println(Barrey[i]);
-        i++;
+    public void calculations (){
+        Sum=0;
+        int i=0;
+        while (i<max(n,m)) {
+            if (i<n){Sum+=Aarrey[i];}
+            if(i<m){Sum+=Barrey[i];}
+            i++;
+        }
     }
-    System.out.println();
-    System.out.println("in addiction have: "+Sum);
-}
+    public void showResult(){
+        System.out.println();
+        System.out.println("AYB ");
+        System.out.println();
+        int i=0;
+        while (i<n) {
+            System.out.print(Aarrey[i] + "  ");
+            i++;
+        }
+
+        i=0;
+        while (i<m) {
+            System.out.print(Barrey[i] + "  ");
+            i++;
+        }
+        System.out.println();
+        System.out.println("in addiction have: "+Sum);
+    }
 }

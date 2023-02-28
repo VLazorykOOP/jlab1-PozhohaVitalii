@@ -17,6 +17,10 @@ public class Task_1 {
         System.out.print("Welcome to task 1: ");
         System.out.println("select mode (in int !!!)( 1:double-double   2:int-double   3:double-int )");
         Scanner N = new Scanner(System.in);
+        while (!N.hasNextInt()){
+            N.next();
+            System.out.println("Not a number! ");
+        }
         mode = N.nextInt();
     }
     public void signAsk() {
@@ -24,15 +28,39 @@ public class Task_1 {
         Scanner P = new Scanner(System.in);
         switch (mode){
             case (2):
+                while (!P.hasNextInt()){
+                    P.next();
+                    System.out.println("Not a number! ");
+                }
                 a = P.nextInt();
+                while (!P.hasNextInt()){
+                    P.next();
+                    System.out.println("Not a number! ");
+                }
                 b = P.nextInt();
                 break;
             case (3):
+                while (!P.hasNextDouble()){
+                    P.next();
+                    System.out.println("Not a number!(Double) ");
+                }
                 A = P.nextDouble();
+                while (!P.hasNextDouble()){
+                    P.next();
+                    System.out.println("Not a number!(Double) ");
+                }
                 B = P.nextDouble();
                 break;
             default:
+                while (!P.hasNextDouble()){
+                    P.next();
+                    System.out.println("Not a number!(Double) ");
+                }
                 A = P.nextDouble();
+                while (!P.hasNextDouble()){
+                    P.next();
+                    System.out.println("Not a number!(Double) ");
+                }
                 B = P.nextDouble();
                 break;
         }

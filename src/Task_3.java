@@ -10,13 +10,39 @@ public class Task_3 {
  public void setMatrix(){
   System.out.print("Welcome to task 3: ");
   System.out.println("input matrix size(n): ");
+  boolean f=true;
+
+ do {
+
+
+  while (!inp.hasNextInt()) {
+    inp.next();
+    System.out.println("Not a number! ");
+
+  }
   N = inp.nextInt();
+
+  if (N>0){
+
+   f=false;
+  }
+  else  {
+   System.out.println("Not a number!(>0 and NOT later) ");
+  }
+ }while (f);
+
+
   matrix = new int[N][N];
   System.out.println("input matrix elements(n*n): ");
   int i=0,j=0;
 
   for(i=0;i<N;i++){
    for(j=0;j<N;j++) {
+    while (!inp.hasNextInt()){
+
+     inp.next();
+     System.out.println("Not a number! ");
+    }
    matrix[i][j] = inp.nextInt();
    }
   }
